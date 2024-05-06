@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { sideNavbarLinks } from "@/constants";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
+import Link from "next/link";
 
 interface SideNavbarProps {
   user: KindeUser | null;
@@ -10,7 +11,7 @@ interface SideNavbarProps {
 export default function SideNavbar({ user }: SideNavbarProps) {
   return (
     <div className="shadow-sm border-r-2 flex-1">
-      <div className="flex flex-col items-center justify-center bg-primary">
+      <div className="flex flex-col items-center justify-center bg-primary py-4">
         <Image src="/images/logo.png" width={80} height={80} alt="Logo" />
         <h1 className="text-xl font-bold mt-2 text-white">
           Attendance Tracker
@@ -20,13 +21,14 @@ export default function SideNavbar({ user }: SideNavbarProps) {
       <div className="mt-2 p-4">
         <nav>
           {sideNavbarLinks.map((item) => (
-            <div
+            <Link
+              href={item.path}
               key={item.id}
               className="flex items-center gap-3 text-lg font-bold p-4 text-muted-foreground hover:text-white hover:bg-primary cursor-pointer transition-all ease-in-out rounded-lg my-4"
             >
-              <item.icon size={24} />
+              <item.icon size={28} />
               <h2>{item.name}</h2>
-            </div>
+            </Link>
           ))}
         </nav>
 

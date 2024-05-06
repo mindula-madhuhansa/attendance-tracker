@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
-async function connect() {
+async function connectToDatabase() {
   const connection = await mysql.createConnection({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
@@ -14,7 +14,7 @@ async function connect() {
     throw new Error("Failed to connect to the database");
   }
 
-  const db = drizzle(connection);
+  return drizzle(connection);
 }
 
-connect();
+export const db = connectToDatabase();
