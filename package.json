@@ -6,14 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:push": "bunx drizzle-kit push:mysql",
+    "db:studio": "bunx drizzle-kit studio"
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.2.5",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.10",
     "lucide-react": "^0.378.0",
+    "mysql2": "^3.9.7",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "react": "^18",
@@ -22,13 +27,14 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "drizzle-kit": "^0.20.17",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "typescript": "^5"
   }
 }
