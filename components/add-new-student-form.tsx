@@ -3,12 +3,12 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "sonner";
 import { useState } from "react";
+import { LoaderIcon } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Grade, Inputs } from "@/types";
 import api from "@/services/globalAPI";
-import { LoaderIcon } from "lucide-react";
 
 interface AddNewStudentFormProps {
   setOpen: (open: boolean) => void;
@@ -29,20 +29,17 @@ export default function AddNewStudentForm({
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     setIsLoading(true);
-    api.addNewStudent(data).then(
-      (response) => {
-        if (response.data) {
-          setIsLoading(false);
-          reset();
-          setOpen(false);
-          toast("Student added successfully");
-        }
-      },
-      (error) => {
+    api.addNewStudent(data).then((response) => {
+      if (response.data) {
+        setIsLoading(false);
+        reset();
+        setOpen(false);
+        toast("Student added successfully");
+      } else {
         setIsLoading(false);
         toast("Failed to add student");
       }
-    );
+    });
     setIsLoading(false);
   };
 

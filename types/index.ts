@@ -9,3 +9,11 @@ export type Inputs = {
   contactNumber: string;
   address: string;
 };
+
+export type Student = {
+  id: number;
+  name: string;
+  grade: string;
+  contactNumber: string;
+  address: string;
+};

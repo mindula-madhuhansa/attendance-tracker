@@ -11,6 +11,10 @@ export async function middleware(request: NextRequest) {
       new URL("/api/auth/login?post_login_redirect_url=/dashboard", request.url)
     );
   }
+
+  const headers = new Headers(request.headers);
+  headers.set("x-current-path", request.nextUrl.pathname);
+  return NextResponse.next({ headers });
 }
 
 // See "Matching Paths" below to learn more

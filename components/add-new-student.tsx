@@ -31,9 +31,14 @@ export default function AddNewStudent() {
 
   return (
     <div>
-      <Button onClick={() => setOpen(true)} className="py-8 px-4">
-        <PlusCircleIcon size={30} />
-        <span className="ml-2 text-xl font-semibold">Add New Student</span>
+      <Button
+        onClick={() => setOpen(true)}
+        className="py-4 md:py-8 px-4 rounded-lg"
+      >
+        <PlusCircleIcon className="w-5 h-5 md:w-7 md:h-7" />
+        <span className="ml-2 text-base md:text-xl font-semibold">
+          Add New Student
+        </span>
       </Button>
 
       <Dialog open={open}>
