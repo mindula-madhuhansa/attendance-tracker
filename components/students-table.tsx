@@ -38,13 +38,13 @@ export default function StudentsTable() {
   }, []);
 
   useEffect(() => {
-    setRowData(students);
+    students && setRowData(students);
   }, [students]);
 
   return (
     <div className="ag-theme-quartz mt-2" style={{ height: 500 }}>
       <div>
-        <h2 className="font-bold text-xl md:text-2xl bg-primary text-white p-4 rounded-lg inline-block">
+        <h2 className="text-xs md:text-base bg-primary/80 text-white px-4 py-2 rounded-lg inline-block">
           Total Students: {students.length}
         </h2>
       </div>

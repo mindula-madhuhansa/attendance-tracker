@@ -3,17 +3,10 @@
 import { PlusCircleIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import AddNewStudentForm from "@/components/add-new-student-form";
 import api from "@/services/globalAPI";
 import { Grade } from "@/types";
+import { Button } from "@/components/ui/button";
+import AddNewStudentModal from "@/components/modals/add-new-student-modal";
 
 export default function AddNewStudent() {
   const [open, setOpen] = useState(false);
@@ -41,16 +34,7 @@ export default function AddNewStudent() {
         </span>
       </Button>
 
-      <Dialog open={open}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Add New Student</DialogTitle>
-            <DialogDescription>
-              <AddNewStudentForm setOpen={setOpen} grades={grades} />
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
+      <AddNewStudentModal open={open} setOpen={setOpen} grades={grades} />
     </div>
   );
 }

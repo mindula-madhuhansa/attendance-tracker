@@ -6,7 +6,7 @@ import {
   SettingsIcon,
 } from "lucide-react";
 
-import { TrashButon } from "@/components/trash-button";
+import DeleteModal from "@/components/modals/delete-modal";
 
 export const sideNavbarLinks = [
   {
@@ -57,7 +57,7 @@ export const colDef: ColDef[] = [
     headerName: "Address",
     filter: true,
   },
-  { field: "action", headerName: "Delete", cellRenderer: TrashButon },
+  { field: "action", headerName: "Delete", cellRenderer: DeleteModal },
 ];
 
 export const pagination = true;

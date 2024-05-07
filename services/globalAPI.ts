@@ -8,6 +8,8 @@ const addNewStudent = (data: Inputs) => axios.post("/api/student", data);
 
 const getAllStudents = () => axios.get("/api/student");
 
-const api = { getAllGrades, addNewStudent, getAllStudents };
+const deleteStudent = (id: number) => axios.delete(`/api/student?id=${id}`);
+
+const api = { getAllGrades, addNewStudent, getAllStudents, deleteStudent };
 
 export default api;
