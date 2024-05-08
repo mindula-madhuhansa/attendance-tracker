@@ -36,7 +36,7 @@ export const sideNavbarLinks = [
 ];
 
 export const colDef: ColDef[] = [
-  { field: "id", headerName: "ID", filter: true, cellClass: "center-cell" },
+  { field: "id", headerName: "ID", filter: true },
   {
     field: "name",
     headerName: "Name",

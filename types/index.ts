@@ -17,3 +17,13 @@ export type Student = {
   contactNumber: string;
   address: string;
 };
+
+export type AttendanceList = {
+  attendanceId: number;
+  date: string;
+  day: number;
+  grade: string;
+  name: string;
+  status: boolean;
+  studentId: number;
+};

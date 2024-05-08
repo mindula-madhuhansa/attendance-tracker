@@ -10,6 +10,15 @@ const getAllStudents = () => axios.get("/api/student");
 
 const deleteStudent = (id: number) => axios.delete(`/api/student?id=${id}`);
 
-const api = { getAllGrades, addNewStudent, getAllStudents, deleteStudent };
+const getAttendanceList = (grade: string, month: string) =>
+  axios.get(`/api/attendance?grade=${grade}&month=${month}`);
+
+const api = {
+  getAllGrades,
+  addNewStudent,
+  getAllStudents,
+  deleteStudent,
+  getAttendanceList,
+};
 
 export default api;

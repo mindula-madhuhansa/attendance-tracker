@@ -10,8 +10,6 @@ interface SideNavbarProps {
 }
 
 export default function SideNavbar({ user, pathname }: SideNavbarProps) {
-  console.log("Pathname", pathname);
-
   return (
     <div className="shadow-sm border-r-2 flex-1">
       <div className="flex flex-col items-center justify-center bg-primary py-4">
